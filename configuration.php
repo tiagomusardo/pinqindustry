@@ -12,10 +12,10 @@ class JConfig {
 	public $debug = '0';
 	public $debug_lang = '0';
 	public $dbtype = 'mysqli';
-	public $host = 'localhost';
-	public $user = 'root';
-	public $password = 'root';
-	public $db = 'pinqindustry3';
+	public $host = 'pinqindustry.com';
+	public $user = 'pinqindu_dev';
+	public $password = 'dev123';
+	public $db = 'pinqindu_pinqindustry3';
 	public $dbprefix = 'joom_';
 	public $live_site = '';
 	public $secret = 'Ws7fY09aZV7Xmf86';
