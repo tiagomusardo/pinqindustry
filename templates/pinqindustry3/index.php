@@ -154,11 +154,9 @@ endif;
 var arrImgBanner = $$('.banneritem');
 var intCountBanner = -1;
 var ctx = $('divBanner').getElement('canvas').getContext('2d');
-var arrBalls = Array;
 
 for(var i = 0; i < arrImgBanner.length; i++)
 {
-	arrBalls[i] = new Element('div', {});
 	$('divBalls').appendChild(arrBalls[i]);
 }
 
