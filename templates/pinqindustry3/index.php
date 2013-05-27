@@ -53,7 +53,7 @@ endif;
 // 	}
 // }
 
-$doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/SlideShow.js', 'text/javascript');
+//$doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/SlideShow.js', 'text/javascript');
 // $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/hide.js', 'text/javascript');
 
 ?>
@@ -123,6 +123,7 @@ $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/SlideS
 		</div>
 		<div id="divBanner">
 			<canvas width="960" height="519"></canvas>
+			<div id="divBalls"></div>
 			<jdoc:include type="modules" name="pinqindustry3-banner" />
 		</div>
 		
@@ -147,12 +148,19 @@ $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/SlideS
 			<div id="right"></div>
 		</div>
 	</div>
-</body>0
+</body>
 </html>
 <script>
 var arrImgBanner = $$('.banneritem');
 var intCountBanner = -1;
 var ctx = $('divBanner').getElement('canvas').getContext('2d');
+var arrBalls = Array;
+
+for(var i = 0; i < arrImgBanner.length; i++)
+{
+	arrBalls[i] = new Element('div', {});
+	$('divBalls').appendChild(arrBalls[i]);
+}
 
 window.addEvent('domready', function()
 {
@@ -166,39 +174,54 @@ window.addEvent('domready', function()
 	  ctx.drawImage(imageObj, 0, 0);
 };
 */
-	changeBanner();
 	bannerSlideOut();
 
 });
 
-function changeBanner()
-{
-	
-	//setTimeout("bannerSlideOut()",5000);
-}
-
 function bannerSlideOut()
 {
-	
-	var mySlide = new Fx.Slide($('divBanner').getElement('canvas'), 
-			  {mode: 'horizontal',
-			   onComplete: function()
-			   {
-	  				if(intCountBanner < arrImgBanner.length - 1)
-	  				{
-	  					intCountBanner++;
-	  				}
-	  				else
-	  				{
-	  					intCountBanner = 0;
-	  				}
-	  				ctx.drawImage(arrImgBanner[intCountBanner].getElement('img'), 0, 0);	
-
-	  				bannerSlideIn();
-	  				
-	  				setTimeout("bannerSlideOut()",5000);
-			   }
-	  		  }).slideOut();
+	if(arrImgBanner.lenght > 1)
+	{
+		var mySlide = new Fx.Slide($('divBanner').getElement('canvas'), 
+					  {mode: 'horizontal',
+					   onComplete: function()
+					   {
+			  				if(intCountBanner < arrImgBanner.length - 1)
+			  				{
+			  					intCountBanner++;
+			  				}
+			  				else
+			  				{
+			  					intCountBanner = 0;
+			  				}
+			  				ctx.drawImage(arrImgBanner[intCountBanner].getElement('img'), 0, 0);	
+		
+			  				bannerSlideIn();
+			  				
+			  				setTimeout("bannerSlideOut()",5000);
+					   }
+			  		  }).slideOut();
+	}
+	else
+	{
+		var mySlide = new Fx.Slide($('divBanner').getElement('canvas'), 
+					  {mode: 'horizontal',
+					   onComplete: function()
+					   {
+			  				if(intCountBanner < arrImgBanner.length - 1)
+			  				{
+			  					intCountBanner++;
+			  				}
+			  				else
+			  				{
+			  					intCountBanner = 0;
+			  				}
+			  				ctx.drawImage(arrImgBanner[intCountBanner].getElement('img'), 0, 0);	
+		
+			  				bannerSlideIn();
+					   }
+			  		  }).slideOut();
+	}
 }
 
 function bannerSlideIn()
@@ -207,52 +230,5 @@ function bannerSlideIn()
 			  {mode: 'horizontal',
 	  		  }).slideIn();	
 }
-
-
-
-
-/*
-var navSlideShow;
-document.addEvent('domready', function(){
-
-	// cache the navigation elements
-	var navs = $('navigation-slideshow').getElements('a');
-
-	// create a basic slideshow
-	navSlideShow = new SlideShow('navigation-slideshow', {
-		selector: 'img', // only create slides out of the images
-		onShow: function(data){
-			// update navigation elements' class depending upon the current slide
-			navs[data.previous.index].removeClass('current');
-			navs[data.next.index].addClass('current');
-		}
-	});
-
-	navs.each(function(item, index){
-		// click a nav item ...
-		item.addEvent('click', function(event){
-			event.stop();
-			// pushLeft or pushRight, depending upon where
-			// the slideshow already is, and where it's going
-			var transition = (navSlideShow.index < index) ? 'pushLeft' : 'pushRight';
-			// call show method, index of the navigation element matches the slide index
-			// on-the-fly transition option
-			navSlideShow.show(index, {transition: transition});
-		});
-	});
-
-	// tips, for pretty
-	new Tips(navs, {
-		fixed: true,
-		text: '',
-		offset: {
-			x: -100,
-			y: 20
-		}
-	});
-	
-
-});
-*/
 
 </script>
