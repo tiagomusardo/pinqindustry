@@ -178,16 +178,19 @@ nav ul li a:hover
 #divBanner #divBalls
 {
 	width:100%;
-	text-align:center;
+	height: 34px;
+	text-align: center;
+	display: block;
 }
 #divBanner #divBalls div
 {
-	width: 6px;
-	height: 6px;
+	width: 7px;
+	height: 7px;
 	border: 1px solid #000000;
 	background-color: #636363;
-	border-radius: 6px;
+	border-radius: 7px;
 	display: inline-block;
+	margin: 11px 18px 11px 0px;
 }
 .bannergroup
 {
@@ -198,7 +201,7 @@ nav ul li a:hover
 {
 	width: 100%;
 	float: left;
-	margin-top: 10px;
+	
 	margin-bottom: 20px;
 }
 .hr
@@ -226,6 +229,15 @@ nav ul li a:hover
 	font-family: arial;
 	size: 12pt;
 	text-align: center;
+}
+#divBottom #middle #title
+{
+	background: url("../images/facebook.png") no-repeat left;
+	background-position: 11px;
+	height: 26px;
+	text-align: left;
+	vertical-align: middle;
+	padding-left: 38px;
 }
 #divBottom #right
 {

@@ -91,7 +91,9 @@ endif;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
 	<header>
 		<div id="divToolBar">
 			<div id="content"></div>
@@ -142,7 +144,8 @@ endif;
 				</form>
 			</div>
 			<div id="middle">
-				
+				<div id="title">facebook</div>
+				<div class="hr"></div>
 				<div class="fb-activity" data-site="pinqindustry.com.br" data-width="290" data-height="300" data-header="false" data-font="arial" data-recommendations="false"></div>
 			</div>
 			<div id="right"></div>
@@ -157,7 +160,7 @@ var ctx = $('divBanner').getElement('canvas').getContext('2d');
 
 for(var i = 0; i < arrImgBanner.length; i++)
 {
-	$('divBalls').appendChild(arrBalls[i]);
+	$('divBalls').appendChild(new Element('div', {}));
 }
 
 window.addEvent('domready', function()
