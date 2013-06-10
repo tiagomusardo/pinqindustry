@@ -137,18 +137,31 @@ endif;
 				Inscreva-se em nossa newsletter:
 
 				<form name="frmNewsletter" id=frmNewsLetter" action"" method="post" enctype="application/x-www-form-urlencoded">
-				<p>
-				<input type="text" name="txtEmail" id="txtEmail" value="" /><br />
-				<input type="submit" name="btnCadastrar" id="btnCadastrar" value="Cadastrar" />
-				</p>
+					<br/>
+					<input type="text" name="txtEmail" id="txtEmail" value="e-mail" /><div id="btnCadastrar"><span>Cadastrar</span></div>
 				</form>
 			</div>
+			<div id="division" class="vr"></div>
 			<div id="middle">
 				<div id="title">facebook</div>
-				<div class="hr"></div>
-				<div class="fb-activity" data-site="pinqindustry.com.br" data-width="290" data-height="300" data-header="false" data-font="arial" data-recommendations="false"></div>
+				<div id="division" class="hr"></div>
+				<div id="content">
+					<div class="fb-activity" data-site="pinqindustry.com.br" data-width="280" data-height="300" data-header="false" data-font="arial" data-recommendations="false"></div>
+				</div>
 			</div>
-			<div id="right"></div>
+			<div id="division" class="vr"></div>
+			<div id="right">
+				<div id="title">instagram</div>
+				<div id="division" class="hr"></div>
+				<div id="content">
+					<!-- SnapWidget -->
+					<iframe src="http://snapwidget.com/in/?u=cGlucV9pbmR1c3RyeXxpbnw5MHwyfDJ8ZmZmZmZmfG5vfDEyfGZhZGVJbg==" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:204px; height: 204px" ></iframe>
+				</div>
+			</div>
+		</div>
+		<div id="divFooter">
+			<div id="division" class="hr"></div>
+			<div id="content">www.pinqindustry.com &reg; Todos os direitos reservados.</div>
 		</div>
 	</div>
 </body>
