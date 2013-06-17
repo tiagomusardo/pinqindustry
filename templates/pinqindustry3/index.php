@@ -130,7 +130,8 @@ endif;
 		</div>
 		
 		<div id="divDivision" class="hr"></div>
-		
+		<jdoc:include type="message" />
+		<jdoc:include type="component" />
 		<div id="divBottom">
 			<div id="left">
 				Fique por dentro de nossas novidades.<br/>
